@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskgfnu4smd7p"]
+
+[ext_resource type="Script" uid="uid://buqs7o45xx2f1" path="res://ui/MainMenu.gd" id="1_b00nv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b00nv")
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.7294118)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -29.99997
+offset_top = 289.00003
+offset_right = 95.00003
+offset_bottom = 312.00003
+scale = Vector2(10, 10)
+text = "save file cleared"
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "GREEN JITSU"
+uppercase = true
+
+[node name="PlayButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "New Game"
+
+[node name="ContinueButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Options" type="Window" parent="."]
+oversampling_override = 1.0
+mode = 2
+title = "Options"
+initial_position = 1
+size = Vector2i(200, 100)
+unresizable = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options"]
+offset_top = 35.0
+offset_right = 125.0
+offset_bottom = 58.0
+
+[node name="ClearButton" type="Button" parent="Options/HBoxContainer"]
+layout_mode = 2
+text = "clear save?"
+
+[node name="VBox" type="VBoxContainer" parent="Options"]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Options/VBox"]
+layout_mode = 2
+text = "Back"

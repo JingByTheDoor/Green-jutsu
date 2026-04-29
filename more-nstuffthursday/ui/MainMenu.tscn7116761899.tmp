@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskgfnu4smd7p"]
+
+[ext_resource type="Script" uid="uid://buqs7o45xx2f1" path="res://ui/MainMenu.gd" id="1_b00nv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b00nv")
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.15686275)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "GREEN JITSU"
+uppercase = true
+
+[node name="PlayButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "New Game"
+
+[node name="ContinueButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Options" type="Window" parent="."]
+oversampling_override = 1.0
+mode = 2
+title = "Options"
+initial_position = 1
+size = Vector2i(200, 100)
+visible = false
+unresizable = true
+
+[node name="VBox" type="VBoxContainer" parent="Options"]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Options/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/VBox/HBox"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="Options/VBox/HBox"]
+layout_mode = 2
+
+[node name="HBox2" type="HBoxContainer" parent="Options/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/VBox/HBox2"]
+layout_mode = 2
+text = "FullScreen"
+
+[node name="FullscreenCheck" type="CheckBox" parent="Options/VBox/HBox2"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Options/VBox"]
+layout_mode = 2
+text = "Back"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btd3h4rapyot"
+path="res://.godot/imported/large swipe skeleton.wav-f5a0d598fb2726a2f2845ab3dbefe8c9.sample"
+
+[deps]
+
+source_file="res://audio/sfx/large swipe skeleton.wav"
+dest_files=["res://.godot/imported/large swipe skeleton.wav-f5a0d598fb2726a2f2845ab3dbefe8c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

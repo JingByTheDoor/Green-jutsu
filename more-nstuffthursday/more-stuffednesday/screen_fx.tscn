@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://djau7bjt7e01d"]
+
+[ext_resource type="Script" uid="uid://naysbe2umd5o" path="res://screen_fx.gd" id="1_65w7t"]
+[ext_resource type="Shader" uid="uid://jjng8p5r0ojh" path="res://Flash.gdshader" id="2_cwp0y"]
+[ext_resource type="Texture2D" uid="uid://bn03yy7akqg20" path="res://ART/ca2aa770-a58b-45ca-a3e1-d507cf36c193.png" id="3_blotn"]
+[ext_resource type="Texture2D" uid="uid://dedokrm8gn10i" path="res://ART/ChatGPT Image Oct 31, 2025, 09_29_36 PM.png" id="4_48is8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blotn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_blotn")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_48is8")
+}],
+"loop": true,
+"name": &"wall_jump",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blotn"]
+shader = ExtResource("2_cwp0y")
+shader_parameter/t = 0.84800004028
+shader_parameter/overlay_color = Color(0, 0, 0, 0.75)
+shader_parameter/vignette_softness = 0.45
+
+[node name="Screen FX" type="CanvasLayer"]
+process_mode = 2
+layer = 100
+script = ExtResource("1_65w7t")
+icon_anchor = "center"
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+position = Vector2(551, 326)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_blotn")
+animation = &"wall_jump"
+
+[node name="Flash" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_blotn")
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.049000002
+anchor_right = 0.96800005
+anchor_bottom = 0.94000006
+offset_left = 7744.8965
+offset_top = -31.752
+offset_right = 55.86389
+offset_bottom = -5441.249
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 474.0
+offset_top = 10.0
+offset_right = 662.0
+offset_bottom = 33.0
+text = "You gained a new ability"
+
+[node name="HintDash" type="Label" parent="."]
+offset_left = 451.0
+offset_top = 590.0
+offset_right = 735.0
+offset_bottom = 639.0
+text = "DASH acquired
+press SHIFT or LEFT CLICK to activate"
+horizontal_alignment = 1
+
+[node name="HintWall" type="Label" parent="."]
+offset_left = 409.0
+offset_top = 585.0
+offset_right = 786.0
+offset_bottom = 634.0
+text = "WALL JUMP acquired
+press against a wall to cling to it then press jump"
+horizontal_alignment = 1
