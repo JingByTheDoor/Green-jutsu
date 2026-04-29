@@ -11,23 +11,23 @@ This repository is a Godot project. Vercel can serve the exported web files, but
 5. Export to:
 
    ```text
-   more-nstuffthursday/web/index.html
+   more-nstuffthursday/index.html
    ```
 
-Commit the generated `more-nstuffthursday/web` folder before deploying from Git.
+Commit the generated `more-nstuffthursday/index.*` files before deploying from Git.
 
 ## Vercel Settings
 
 If the Vercel project root is the repository root, the root `vercel.json` serves:
 
 ```text
-more-nstuffthursday/web
+more-nstuffthursday
 ```
 
 If the Vercel project root is set to `more-nstuffthursday`, the nested `more-nstuffthursday/vercel.json` serves:
 
 ```text
-web
+.
 ```
 
 Leave the build command and install command empty. The Godot export should already exist before Vercel deploys.
